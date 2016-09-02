@@ -1,5 +1,5 @@
 from django.contrib import admin
-from hostinfo.models import Host
+from hostinfo.models import Host, HostGroup
 # Register your models here.
 class HostAdmin(admin.ModelAdmin):
     list_display = ['hostname',
@@ -11,4 +11,7 @@ class HostAdmin(admin.ModelAdmin):
     'cpu_num',
     'memory',
     'sn']
+class HostGroupAdmin(admin.ModelAdmin):
+    list_display = ['groupname']
 admin.site.register(Host, HostAdmin)
+admin.site.register(HostGroup, HostGroupAdmin)

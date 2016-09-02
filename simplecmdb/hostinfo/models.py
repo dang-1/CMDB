@@ -14,3 +14,6 @@ class Host(models.Model):
     osver = models.CharField(max_length=50)
     def __unicode__(self):
         return self.hostname
+class HostGroup(models.Model):
+    groupname = models.CharField(max_length=50)
+    members = models.ManyToManyField(Host)
