@@ -10,4 +10,6 @@ urlpatterns = patterns('',
 
     url(r'^admin/', include(admin.site.urls)),
     url(r'^hostinfo/collect/$','hostinfo.views.collect'),
+    url(r'^hostinfo/getjson/$','hostinfo.views.getjson'),
+    url(r'^hostinfo/gettxt/$','hostinfo.views.gettxt'),
 )

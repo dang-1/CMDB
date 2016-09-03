@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from hostinfo.models import Host
+from hostinfo.models import Host,HostGroup
 import json
 # Create your views here.
 def collect(req):
@@ -27,8 +27,8 @@ def collect(req):
         sn = obj['sn']
         try:
             host = Host.objects.get(sn=sn)
-        except host = Host()
-
+        except:
+            host = Host()
         host = Host()
         host.hostname = hostname
         host.ip = ip
@@ -43,3 +43,23 @@ def collect(req):
         return HttpResponse('ok')
     else:
         return HttpResponse('no data')
+def getjson(req):
+    ret_list = []
+    hg = HostGroup.objects.all()
+    for g in hg:
+        ret = {'grouname':g.groupname,'members':[]}
+        for h in g.members.all():
+            ret_h = {'hostname':h.hostname,'ip':h.ip}
+            ret['members'].append(ret_h)
+        ret_list.append(ret)
+    return HttpResponse(json.dumps(ret_list))
+def gettxt(req):
+    res = ''
+    hg = HostGroup.objects.all()
+    for g in hg:
+        groupname = g.groupname
+        for h in g.members.all():
+            hostname = h.hostname
+            ip = h.ip
+            res += groupname+' '+hostname+' '+ip+'\n'
+    return HttpResponse(res)
