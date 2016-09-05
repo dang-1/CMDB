@@ -1,10 +1,7 @@
 #!/usr/bin/env python
 #coding:utf-8
 # use in centos 6.x
-
 from subprocess import Popen,PIPE
-
-
 def get_internal_ip():
     new_line = ''
     lines = []
