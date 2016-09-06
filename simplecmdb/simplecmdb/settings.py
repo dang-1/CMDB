@@ -17,14 +17,15 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 # See https://docs.djangoproject.com/en/1.6/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'd#u17thmsvxra5$kgh+wmk6vnvn8&-05%wce22q1=so%jlhk9c'
+SECRET_KEY = '3a78qj7(3k(a*_12&obixkbyy@=s$6&hyb7=-5+ugz0pc!m2hm'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
+#DEBUG = False
 
 TEMPLATE_DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['192.*']
 
 
 # Application definition
@@ -62,22 +63,24 @@ WSGI_APPLICATION = 'simplecmdb.wsgi.application'
 #        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
 #    }
 #}
-DATABASES = { 
-    'default': { 
+DATABASES = {
+    'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'cmdb',
         'USER': 'dang',
         'PASSWORD': '123456',
         'HOST': '127.0.0.1',
-        'PORT': '3306', 
-    } 
+        'PORT': '3306',
+    }
 }
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.6/topics/i18n/
 
+#LANGUAGE_CODE = 'en-us'
 LANGUAGE_CODE = 'zh-cn'
 
+#TIME_ZONE = 'UTC'
 TIME_ZONE = 'Asia/Shanghai'
 
 USE_I18N = True
