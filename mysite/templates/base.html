@@ -1,0 +1,65 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>{% block title %}{% endblock %}</title>
+	<!--<link rel="stylesheet" type="text/css" href="../static/css/base.css">-->
+    <link href="{% static 'css/base.css' %}" rel="stylesheet">
+</head>
+
+<body>
+    <section id="container">
+    <header class="header">
+        <div>
+        	<a href="">运维管理</a>
+        </div>
+    </header>
+
+    <aside class="sidebar">
+        <div id="leftside-navigation" class="nano">
+        	<ul class="nano-content">
+        		<li class="active">
+        			<a href="">首页</a>
+        		</li>
+        		<li class="sub-menu">
+        			<a href=""><i class="fa fa-table"></i>服务器信息</a>
+        		    <ul>
+        		    	<li><a href="">所有</a></li>
+        		    	<li><a href="">mainland</a></li>
+        		    	<li><a href="">台湾</a></li>
+        		    </ul>
+        		</li>
+        		<li class="sub-menu">
+        			<a href=""><i class="fa fa-table"></i>程序信息</a>
+        		    <ul>
+        		    	<li><a href="">所有</a></li>
+        		    	<li><a href="">mainland</a></li>
+        		    	<li><a href="">台湾</a></li>
+        		    </ul>
+        		</li>
+        		<li class="sub-menu">
+        			<a href=""><i class="fa fa-table"></i>个人</a>
+        		    <ul>
+        		    	<li><a href="">个人信息</a></li>
+        		    	<li><a href="">修改</a></li>
+        		    	<li><a href="">管理员</a></li>
+        		    </ul>
+        		</li>
+        	</ul>
+        </div>
+    	
+    </aside>
+
+    <section class="main-content-wrapper">
+    	
+    </section>
+
+    <footer class="footer">
+    	
+    </footer>
+    </section>
+
+</body>
+</html>
